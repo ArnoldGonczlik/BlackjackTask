@@ -6,10 +6,22 @@ using System.Threading.Tasks;
 
 namespace Blackjack {
     public class Player {
-        Card card = new Card();
+        private Cards _card1;
+        private Cards _card2;
+        private Cards[] CardsList = new Cards[2];
 
-        var Hand1 = card.RandomCard();
-        var Hand1 = card.RandomCard();
+        public Player() {
+            Card card = new Card();
+            _card1 = card.RandomCard();
+            _card2 = card.RandomCard();
 
+            CardsList[0] = _card1;
+            CardsList[1] = _card2;
+
+        }
+
+        public Cards[] getCards () {
+            return CardsList;
+        }
     }
 }

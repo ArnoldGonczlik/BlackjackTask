@@ -3,16 +3,11 @@
 namespace Blackjack {
     internal class Blackjack {
         static void Main(string[] args) {
-            Console.WriteLine(Cards.Queen);
+            Player player = new Player();
 
-            //Get random card
-
-            var player = new Player();
-
-
-            Console.WriteLine();
+            foreach (Cards card in player.getCards()) {
+                Console.WriteLine(card);
+            }
         }
-
-
     }
 }

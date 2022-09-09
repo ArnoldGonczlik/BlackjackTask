@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Blackjack {
     internal class Card {
-        public static Cards RandomCard() {
+        public Cards RandomCard() {
             Random rnd = new Random();
             Array CardArray = Enum.GetValues(typeof(Cards));
-            var GetCardTest = CardArray.GetValue(rnd.Next(CardArray.Length));
-            return (Cards)GetCardTest;
+            Cards GetCardTest = (Cards)CardArray.GetValue(rnd.Next(CardArray.Length));
+
+            return GetCardTest;
         }
     }
 
