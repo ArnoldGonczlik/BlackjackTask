@@ -5,16 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Blackjack {
-    public class Player {
+    internal class Dealer {
         private List<KeyValuePair<int, string>> _hand = new List<KeyValuePair<int, string>>();
         private Card _card = new Card();
 
-        public Player() {
+        public Dealer() {
             _hand.Add(_card.getRandomCard());
             _hand.Add(_card.getRandomCard());
         }
 
-        public List<KeyValuePair<int, string>> getCards () {
+        public List<KeyValuePair<int, string>> getCards() {
             return _hand;
         }
 
@@ -23,7 +23,7 @@ namespace Blackjack {
         }
 
         public string showCards() {
-             return string.Join(", ", _hand.Select(x => string.Join("",x.Value)));
+            return string.Join(", ", _hand.Select(x => string.Join("", x.Value)));
         }
 
         public void addCard() {
