@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Blackjack {
     public class Player {
         private List<KeyValuePair<int, string>> _hand = new List<KeyValuePair<int, string>>();
@@ -28,6 +23,10 @@ namespace Blackjack {
 
         public void addCard() {
             _hand.Add(_card.getRandomCard());
+        }
+
+        public KeyValuePair<int, string> lastCardPulled() {
+            return _hand.Last();
         }
     }
 }
